@@ -1,28 +1,37 @@
 <template>
-  <div class="col-sm-4">
-    <div class="card" style="width: 18rem;" v-for="res in data.restaurants" :key="res.id">
-      <!--<v-img  height="200"
-      :src="url" alt="#404"></v-img>-->
-      <div class="card-body">
-        <h5 class="card-title">{{res.name}}</h5>
-        <p class="card-text">{{res.desc}}</p>
-        <!--<router-link tag="a" :to="'/details/'+name" href="#" class="btn btn-primary">Check menu</router-link> -->
-      </div>
-      <br />
-    </div>
-  </div>
+	<div class="columns is-multiline is-mobile" style="padding-top:30px">
+		<template v-for="res in data.restaurants">
+			<div class="column is-one-quarter" :key="res.id">
+				<div class="card-image">
+					<figure class="image is-4by3">
+						<img
+							style="height:250px; width:250px; padding:10px; border: 1px solid gray"
+							v-bind:src="res.img"
+							alt="img 404"
+						/>
+					</figure>
+				</div>
+				<div class="card-content">
+					<div class="media">
+						<div class="media-content">
+							<p class="title is-4">{{ res.name }}</p>
+							<p class="subtitle is-6">{{ res.desc }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</div>
 </template>
 
 <script>
 export default {
-  name: "Home",
-  computed: {
-    data() {
-      return this.$store.state.customers;
-    },
-  },
+	computed: {
+		data() {
+			return this.$store.state.customers;
+		},
+	},
 };
 </script>
 
-<style>
-</style>
+<style></style>

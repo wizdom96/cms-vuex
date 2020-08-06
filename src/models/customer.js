@@ -56,63 +56,63 @@ export const customers = {
 		{
 			id: 6,
 			name: "Chili's",
-			type: "Casual Dining",
-			food: ["pasta", "salad"],
+			type: "Restaurant",
+			food: ["lasagna", "salad"],
 			priceRange: "Cheap",
 			img:
 				"https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/082017/untitled-1_33.png?itok=EMdlUnZ_",
 			desc:
-				"Chili's Grill & Bar is an American casual dining restaurant chain. The company was founded by Larry Lavine in Texas in 1975.",
+				"Chili's Grill & Bar is an American restaurant restaurant chain. The company was founded by Larry Lavine in Texas in 1975.",
 		},
 		{
 			id: 7,
 			name: "Chevys",
-			type: "Casual Dining",
-			food: ["pasta", "salad", "beef"],
+			type: "Restaurant",
+			food: ["lasagna", "salad", "steak"],
 			priceRange: "Medium",
 			img:
 				"https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_c8ay30o7/def_height/2700/def_width/2700/version/100012/type/1",
 			desc:
-				"Chevys Fresh Mex is an American chain of Mexican-style casual dining restaurants located in the United States. ",
+				"Chevys Fresh Mex is an American chain of Mexican-style restaurant restaurants located in the United States. ",
 		},
 		{
 			id: 8,
 			name: "Red Lobster",
-			type: "Casual Dining",
+			type: "Restaurant",
 			food: ["sea food", "salad"],
 			priceRange: "Expensive",
 			img:
 				"https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/8c2b93a3606627b959b804ba2f55b8ce",
 			desc:
-				"Red Lobster Hospitality LLC is an American casual dining restaurant chain headquartered in Orlando, Florida.",
+				"Red Lobster Hospitality LLC is an American restaurant restaurant chain headquartered in Orlando, Florida.",
 		},
 		{
 			id: 9,
 			name: "Bonefish Grill",
-			type: "Casual Dining",
-			food: ["sea food", "beef"],
+			type: "Restaurant",
+			food: ["sea food", "steak"],
 			priceRange: "Medium",
 			img:
 				"https://media-cdn.tripadvisor.com/media/photo-s/0d/94/51/1b/logo-bonefish.jpg",
 			desc:
-				"Bonefish Grill is an American casual dining seafood restaurant chain owned and operated by Bloomin' Brands.",
+				"Bonefish Grill is an American restaurant seafood restaurant chain owned and operated by Bloomin' Brands.",
 		},
 		{
 			id: 10,
 			name: "Olive Garden",
-			type: "Casual Dining",
-			food: ["salad", "vegan"],
+			type: "Restaurant",
+			food: ["salad", "french fries"],
 			priceRange: "Expensive",
 			img:
 				"https://pbs.twimg.com/profile_images/1228350118841266177/aXOYGOPs_400x400.jpg",
 			desc:
-				"Olive Garden is an American casual dining restaurant chain specializing in Italian-American cuisine.",
+				"Olive Garden is an American restaurant restaurant chain specializing in Italian-American cuisine.",
 		},
 		{
 			id: 11,
 			name: "Bretucci's",
-			type: "Casual Dining",
-			food: ["salad", "vegan", "pasta"],
+			type: "Restaurant",
+			food: ["salad", "french fries", "lasagna"],
 			priceRange: "Medium",
 			img:
 				"https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0024/9256/brand.gif?itok=udtVSuTn",
@@ -122,8 +122,8 @@ export const customers = {
 		{
 			id: 12,
 			name: "Copeland's",
-			type: "Casual Dining",
-			food: ["beef", "sea food", "vegan", "pasta", "salad"],
+			type: "Restaurant",
+			food: ["steak", "sea food", "french fries", "lasagna", "salad"],
 			priceRange: "Expensive",
 			img:
 				"https://pbs.twimg.com/profile_images/854112801840934912/wRe0lGS6_400x400.jpg",
@@ -131,12 +131,12 @@ export const customers = {
 				"Copeland's is a restaurant chain started by New Orleans native Al Copeland in 1983.",
 		},
 	],
-	types: ["Fast Food", "Casual Dining"],
+	types: ["Fast Food", "Restaurant"],
 	products: [
-		"beef",
+		"steak",
 		"sea food",
-		"vegan",
-		"pasta",
+		"french fries",
+		"lasagna",
 		"salad",
 		"chicken",
 		"hamburger",

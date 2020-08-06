@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "buefy": "^0.7.2",
+    "classlist.js": "^1.1.20150312",
     "vue": "^2.5.21",
     "vue-router": "^3.0.2",
     "vue-sweetalert2": "^1.6.4",
