@@ -1,14 +1,15 @@
-export const customers = {
+export const restaurant = {
 	restaurants: [
 		{
 			id: 1,
-			name: "KFC",
-			type: "Fast Food",
-			food: ["chicken", "ice cream"],
+			name: "Commander's Palace",
+			type: "Restaurant",
+			food: ["chicken", "ice cream", "steak"],
 			priceRange: "Cheap",
-			img: "https://seeklogo.com/images/K/kfc-logo-542AAD59EB-seeklogo.com.png",
+			img:
+				"https://www.commanderspalace.com/constrain/850/566/uploads/gallery/CPexterior3_1425935620.JPG",
 			desc:
-				"KFC is an American fast food restaurant chain headquartered in Louisville, Kentucky, that specializes in fried chicken.",
+				"Known for the award-winning quality of its food and its convivial atmosphere, the history of this famous restaurant offers a glimpse into New Orleans' storied past and has been the go-to destination for Haute Creole cuisine and whimsical Louisiana charm.",
 		},
 		{
 			id: 2,
@@ -153,4 +154,4 @@ export const customers = {
 	auth: true,
 };
 
-export default customers;
+export default restaurant;

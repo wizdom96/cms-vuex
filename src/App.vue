@@ -4,10 +4,7 @@
 		<section class="hero">
 			<div class="hero-body">
 				<div class="container">
-					<h1 class="title has-text-centered">
-						{{ currentPage }}
-					</h1>
-					<h2 class="subtitle"></h2>
+					<br />
 					<router-view class="view"></router-view>
 				</div>
 			</div>
@@ -25,13 +22,6 @@ export default {
 	},
 	created() {},
 	computed: {
-		currentPage() {
-			return this.$route.name
-				.toLowerCase()
-				.split(" ")
-				.map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-				.join(" ");
-		},
 		navigationLink() {
 			return this.$router.options.routes.map((i) => {
 				return {

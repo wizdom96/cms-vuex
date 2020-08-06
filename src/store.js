@@ -1,24 +1,24 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import customers from "./models/customer";
+import restaurant from "./models/restaurant";
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
-		customers: customers,
+		restaurant: restaurant,
 	},
 	mutations: {
-		remove_customer(state, index) {
+		remove_restaurant(state, index) {
 			if (index > -1) {
-				state.customers.restaurants.splice(index, 1);
+				state.restaurant.restaurants.splice(index, 1);
 			}
 		},
-		add_customer(state, payload) {
-			state.customers.restaurants.push(payload);
+		add_restaurant(state, payload) {
+			state.restaurant.restaurants.push(payload);
 		},
-		edit_customer(state, payload) {
-			state.customers.restaurants = state.customers.restaurants.map((i) => {
+		edit_restaurant(state, payload) {
+			state.restaurant.restaurants = state.restaurant.restaurants.map((i) => {
 				if (i.id == payload.id) {
 					return payload;
 				}
@@ -27,9 +27,9 @@ const store = new Vuex.Store({
 		},
 	},
 	actions: {
-		removeCustomer({ state, commit }, id) {
+		removeRestaurant({ state, commit }, id) {
 			try {
-				var index = state.customers.restaurants
+				var index = state.restaurant.restaurants
 					.map((i) => {
 						if (id == i.id) return true;
 						return false;
@@ -37,7 +37,7 @@ const store = new Vuex.Store({
 					.indexOf(true);
 
 				if (index != -1) {
-					commit("remove_customer", index);
+					commit("remove_restaurant", index);
 					return true;
 				} else {
 					return false;
@@ -46,11 +46,11 @@ const store = new Vuex.Store({
 				return false;
 			}
 		},
-		addCustomer({ commit }, payload) {
-			commit("add_customer", payload);
+		addRestaurant({ commit }, payload) {
+			commit("add_restaurant", payload);
 		},
-		editCustomer({ commit }, payload) {
-			commit("edit_customer", {
+		editRestaurant({ commit }, payload) {
+			commit("edit_restaurant", {
 				id: payload.id,
 				name: payload.name,
 				type: payload.type,

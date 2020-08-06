@@ -6,7 +6,7 @@
 				<div class="control">
 					<input
 						class="input"
-						v-model="customer.name"
+						v-model="restaurant.name"
 						type="text"
 						placeholder="Name"
 						required
@@ -27,7 +27,7 @@
 				<div class="field is-narrow">
 					<label class="label">Select food</label>
 					<div class="control" v-for="product in data.products" :key="product">
-						<input type="checkbox" v-model="customer.food" :value="product" />
+						<input type="checkbox" v-model="restaurant.food" :value="product" />
 						{{ product }}
 					</div>
 				</div>
@@ -37,7 +37,7 @@
 				<div class="field is-narrow">
 					<label class="label">Select food</label>
 					<div class="control" v-for="type in data.types" :key="type">
-						<input type="radio" v-model="customer.type" :value="type" />
+						<input type="radio" v-model="restaurant.type" :value="type" />
 						{{ type }}
 					</div>
 				</div>
@@ -46,9 +46,11 @@
 			<div class="field">
 				<label class="label">{{ editAddText }} Price Range</label>
 				<div class="control" v-for="price in data.prices" :key="price">
-					<input type="radio" v-model="customer.priceRange" :value="price" />{{
-						price
-					}}
+					<input
+						type="radio"
+						v-model="restaurant.priceRange"
+						:value="price"
+					/>{{ price }}
 				</div>
 			</div>
 
@@ -57,7 +59,7 @@
 				<div class="control">
 					<input
 						class="input"
-						v-model="customer.img"
+						v-model="restaurant.img"
 						type="text"
 						placeholder="Link for Image"
 						required
@@ -70,7 +72,7 @@
 				<div class="control">
 					<input
 						class="input"
-						v-model="customer.desc"
+						v-model="restaurant.desc"
 						type="text"
 						placeholder="Description"
 						required
@@ -80,7 +82,7 @@
 
 			<div class="field is-grouped" style="margin-top:20px">
 				<div class="control">
-					<button class="button is-link">{{ editAddText }} Customer</button>
+					<button class="button is-link">{{ editAddText }} restaurant</button>
 				</div>
 			</div>
 		</form>
@@ -89,11 +91,11 @@
 
 <script>
 export default {
-	name: "CustomerInputForm",
+	name: "RestaurantInputForm",
 	props: ["editId"],
 	data() {
 		return {
-			customer: {
+			restaurant: {
 				name: "",
 				type: "",
 				food: [],
@@ -106,17 +108,17 @@ export default {
 	watch: {
 		editId(val) {
 			if (val) {
-				let current = this.$store.state.customers.restaurants.filter((i) => {
+				let current = this.$store.state.restaurant.restaurants.filter((i) => {
 					if (i.id == val) return true;
 					else false;
 				})[0];
 
-				this.customer.name = current.name;
-				this.customer.type = current.type;
-				this.customer.priceRange = current.priceRange;
-				this.customer.food = current.food;
-				this.customer.img = current.img;
-				this.customer.desc = current.desc;
+				this.restaurant.name = current.name;
+				this.restaurant.type = current.type;
+				this.restaurant.priceRange = current.priceRange;
+				this.restaurant.food = current.food;
+				this.restaurant.img = current.img;
+				this.restaurant.desc = current.desc;
 			} else {
 				this.resetFormData();
 			}
@@ -124,7 +126,7 @@ export default {
 	},
 	computed: {
 		data() {
-			return this.$store.state.customers;
+			return this.$store.state.restaurant;
 		},
 		editAddText() {
 			return this.editId ? "Edit" : "Insert";
@@ -132,7 +134,7 @@ export default {
 	},
 	methods: {
 		resetFormData() {
-			this.customer = {
+			this.restaurant = {
 				name: "",
 				type: "",
 				food: [],
@@ -143,17 +145,17 @@ export default {
 		},
 		submit(event) {
 			event.preventDefault();
-			var payload = this.customer;
+			var payload = this.restaurant;
 
 			if (!this.editId) {
 				payload["id"] =
-					this.$store.state.customers.restaurants.length != 0
+					this.$store.state.restaurant.restaurants.length != 0
 						? Math.max(
-								...this.$store.state.customers.restaurants.map((i) => i.id)
+								...this.$store.state.restaurant.restaurants.map((i) => i.id)
 						  ) + 1
 						: 0;
-				const customer = { ...payload };
-				this.$store.dispatch("addCustomer", customer);
+				const restaurant = { ...payload };
+				this.$store.dispatch("addRestaurant", restaurant);
 				this.$swal(
 					"Created Succesfully!",
 					"Record has been created",
@@ -163,8 +165,8 @@ export default {
 				this.resetFormData();
 			} else {
 				payload["id"] = this.editId;
-				const customer = { ...payload };
-				this.$store.dispatch("editCustomer", customer);
+				const restaurant = { ...payload };
+				this.$store.dispatch("editRestaurant", restaurant);
 				this.$swal(
 					"Updated Succesfully!",
 					"Record has been updated",
