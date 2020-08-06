@@ -4,7 +4,7 @@
 		<section class="hero">
 			<div class="hero-body">
 				<div class="container">
-					<h1 class="title has-text-centered" style="padding:20px">
+					<h1 class="title has-text-centered">
 						{{ currentPage }}
 					</h1>
 					<h2 class="subtitle"></h2>

@@ -16,7 +16,7 @@
 
 			<div class="field">
 				<label class="label">{{ editAddText }} Type</label>
-				<select class="form-control" name="type" v-model="customer.priceRange">
+				<select class="form-control" name="type">
 					<option :value="type" v-for="type in data.types" :key="type">{{
 						type
 					}}</option>
@@ -45,11 +45,11 @@
 
 			<div class="field">
 				<label class="label">{{ editAddText }} Price Range</label>
-				<select class="form-control" name="type" v-model="customer.priceRange">
-					<option :value="price" v-for="price in data.prices" :key="price">{{
+				<div class="control" v-for="price in data.prices" :key="price">
+					<input type="radio" v-model="customer.priceRange" :value="price" />{{
 						price
-					}}</option>
-				</select>
+					}}
+				</div>
 			</div>
 
 			<div class="field">
@@ -99,21 +99,24 @@ export default {
 				food: [],
 				priceRange: "",
 				desc: "",
-				pic: "",
+				img: "",
 			},
 		};
 	},
 	watch: {
 		editId(val) {
 			if (val) {
-				let current = this.$store.state.customers.filter((i) => {
+				let current = this.$store.state.customers.restaurants.filter((i) => {
 					if (i.id == val) return true;
 					else false;
 				})[0];
 
-				this.customer.first_name = current.first_name;
-				this.customer.last_name = current.last_name;
-				this.customer.gender = current.gender;
+				this.customer.name = current.name;
+				this.customer.type = current.type;
+				this.customer.priceRange = current.priceRange;
+				this.customer.food = current.food;
+				this.customer.img = current.img;
+				this.customer.desc = current.desc;
 			} else {
 				this.resetFormData();
 			}
@@ -133,7 +136,7 @@ export default {
 				name: "",
 				type: "",
 				food: [],
-				priceRange: "Cheap",
+				priceRange: "",
 				desc: "",
 				img: "",
 			};
@@ -151,11 +154,22 @@ export default {
 						: 0;
 				const customer = { ...payload };
 				this.$store.dispatch("addCustomer", customer);
+				this.$swal(
+					"Created Succesfully!",
+					"Record has been created",
+					"success"
+				);
+
 				this.resetFormData();
 			} else {
 				payload["id"] = this.editId;
 				const customer = { ...payload };
 				this.$store.dispatch("editCustomer", customer);
+				this.$swal(
+					"Updated Succesfully!",
+					"Record has been updated",
+					"success"
+				);
 			}
 		},
 	},

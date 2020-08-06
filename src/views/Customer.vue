@@ -86,12 +86,8 @@ export default {
 		},
 	},
 	methods: {
-		removeChar(string) {
-			string = string.replace("[", "");
-			return string;
-		},
-		editCustomer(customer) {
-			this.editId = customer.id;
+		editCustomer(id) {
+			this.editId = id;
 			this.showAdd = false;
 		},
 		addCustomer() {

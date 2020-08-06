@@ -55,7 +55,7 @@ const store = new Vuex.Store({
 				name: payload.name,
 				type: payload.type,
 				food: payload.food,
-				price_range: payload.price_range,
+				priceRange: payload.priceRange,
 				img: payload.img,
 				desc: payload.desc,
 			});
