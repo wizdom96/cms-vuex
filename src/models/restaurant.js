@@ -9,7 +9,7 @@ export const restaurant = {
 			img:
 				"https://www.commanderspalace.com/constrain/850/566/uploads/gallery/CPexterior3_1425935620.JPG",
 			desc:
-				"Known for the award-winning quality of its food and its convivial atmosphere, the history of this famous restaurant offers a glimpse into New Orleans' storied past and has been the go-to destination for Haute Creole cuisine and whimsical Louisiana charm.",
+				"Known for the award-winning quality of its food and its convivial atmosphere.",
 		},
 		{
 			id: 2,
@@ -31,7 +31,7 @@ export const restaurant = {
 			img:
 				"https://logos-download.com/wp-content/uploads/2016/04/Pizza_Hut_logo_red.png",
 			desc:
-				"Pizza Hut is an American restaurant chain and international franchise which was founded in 1958 by Dan and Frank Carney. ",
+				"Pizza Hut is an American restaurant chain and international franchise which was founded in 1958.",
 		},
 		{
 			id: 4,
@@ -41,7 +41,7 @@ export const restaurant = {
 			priceRange: "Cheap",
 			img: "https://images.safe.com/logos/customers/mcdonalds.png",
 			desc:
-				"McDonald's Corporation is an American fast food company, founded in 1940 as a restaurant operated by Richard and Maurice McDonald.",
+				"McDonald's Corporation is an American fast food company, founded in 1940.",
 		},
 		{
 			id: 5,

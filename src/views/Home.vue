@@ -83,6 +83,7 @@
 				Reset Filters
 			</button>
 		</div>
+		<br />
 		<div class="columns is-multiline is-mobile" style="padding-top:30px">
 			<template v-for="res in restaurants">
 				<div class="column is-one-quarter" :key="res.id">
