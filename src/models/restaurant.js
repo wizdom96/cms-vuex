@@ -58,7 +58,7 @@ export const restaurant = {
 			id: 6,
 			name: "Chili's",
 			type: "Restaurant",
-			food: ["lasagna", "salad"],
+			food: ["lasagna", "salad", "steak"],
 			priceRange: "Cheap",
 			img:
 				"https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/082017/untitled-1_33.png?itok=EMdlUnZ_",
@@ -134,13 +134,6 @@ export const restaurant = {
 		"ice cream",
 	],
 	prices: ["Cheap", "Medium", "Expensive"],
-	filter: {
-		search: "",
-		type: "",
-		price: "",
-		products: [],
-	},
-	auth: true,
 };
 
 export default restaurant;
