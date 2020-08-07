@@ -4,6 +4,7 @@
 			Edit Restaurants
 		</h1>
 		<br />
+
 		<div class="columns" style="padding-top:30px">
 			<div class="column is-three-fifths">
 				<table v-if="data.length != 0" class="table">

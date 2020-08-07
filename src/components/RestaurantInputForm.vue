@@ -2,7 +2,7 @@
 	<div>
 		<form @submit="submit($event)">
 			<div class="field">
-				<label class="label">{{ editAddText }} First Name</label>
+				<label class="label">{{ editAddText }} First Name*</label>
 				<div class="control">
 					<input
 						class="input"
@@ -15,17 +15,19 @@
 			</div>
 
 			<div class="field">
-				<label class="label">{{ editAddText }} Type</label>
-				<select class="form-control" name="type">
-					<option :value="type" v-for="type in data.types" :key="type">{{
-						type
-					}}</option>
-				</select>
+				<label class="label">{{ editAddText }} Type*</label>
+				<div class="select">
+					<select class="form-control" name="type">
+						<option :value="type" v-for="type in data.types" :key="type">{{
+							type
+						}}</option>
+					</select>
+				</div>
 			</div>
 
 			<div class="field-body">
 				<div class="field is-narrow">
-					<label class="label">Select food</label>
+					<label class="label">Select food*</label>
 					<div class="control" v-for="product in data.products" :key="product">
 						<input type="checkbox" v-model="restaurant.food" :value="product" />
 						{{ product }}
@@ -35,7 +37,7 @@
 
 			<div class="field-body">
 				<div class="field is-narrow">
-					<label class="label">Select food</label>
+					<label class="label">Select food*</label>
 					<div class="control" v-for="type in data.types" :key="type">
 						<input type="radio" v-model="restaurant.type" :value="type" />
 						{{ type }}
@@ -44,7 +46,7 @@
 			</div>
 
 			<div class="field">
-				<label class="label">{{ editAddText }} Price Range</label>
+				<label class="label">{{ editAddText }} Price Range*</label>
 				<div class="control" v-for="price in data.prices" :key="price">
 					<input
 						type="radio"
@@ -68,7 +70,7 @@
 			</div>
 
 			<div class="field">
-				<label class="label">Description</label>
+				<label class="label">Description*</label>
 				<div class="control">
 					<input
 						class="input"
@@ -155,14 +157,23 @@ export default {
 						  ) + 1
 						: 0;
 				const restaurant = { ...payload };
-				this.$store.dispatch("addRestaurant", restaurant);
-				this.$swal(
-					"Created Succesfully!",
-					"Record has been created",
-					"success"
-				);
 
-				this.resetFormData();
+				if (
+					restaurant.type == "" ||
+					restaurant.food.length == 0 ||
+					restaurant.priceRange == ""
+				) {
+					this.$swal("Fail!", "You must fill all required fields.", "error");
+				} else {
+					this.$store.dispatch("addRestaurant", restaurant);
+					this.$swal(
+						"Created Succesfully!",
+						"Record has been created",
+						"success"
+					);
+
+					this.resetFormData();
+				}
 			} else {
 				payload["id"] = this.editId;
 				const restaurant = { ...payload };

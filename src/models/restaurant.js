@@ -120,17 +120,6 @@ export const restaurant = {
 			desc:
 				"Bertucci's is an American chain of restaurants offering pizza and Italian food. It also offers delivery, take-out and private dining.",
 		},
-		{
-			id: 12,
-			name: "Copeland's",
-			type: "Restaurant",
-			food: ["steak", "sea food", "french fries", "lasagna", "salad"],
-			priceRange: "Expensive",
-			img:
-				"https://pbs.twimg.com/profile_images/854112801840934912/wRe0lGS6_400x400.jpg",
-			desc:
-				"Copeland's is a restaurant chain started by New Orleans native Al Copeland in 1983.",
-		},
 	],
 	types: ["Fast Food", "Restaurant"],
 	products: [
